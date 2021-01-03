@@ -227,7 +227,7 @@
 
 #elif  defined(TARGET_HW_ROBOMASTER_DEV_A)
 
-# define APP_LOAD_ADDRESS               0x08004000
+# define APP_LOAD_ADDRESS               0x0800C000
 # define BOOTLOADER_DELAY               5000
 # define BOARD_ROBOMASTER_DEV_A
 # define INTERFACE_USB                  1
@@ -240,6 +240,9 @@
 # define _FLASH_KBYTES                  (*(uint16_t *)0x1fff7a22)
 # define BOARD_FLASH_SECTORS            ((_FLASH_KBYTES == 0x400) ? 11 : 23)
 # define BOARD_FLASH_SIZE               (_FLASH_KBYTES * 1024)
+// for parameter data etc
+# define BOARD_FIRST_FLASH_SECTOR_TO_ERASE  2
+# define APP_RESERVATION_SIZE            (2 * 16 * 1024) /* 2 16 Kib Sectors */
 
 # define OSC_FREQ                       12
 
@@ -284,7 +287,7 @@
 
 #elif  defined(TARGET_HW_ROBOMASTER_DEV_C)
 
-# define APP_LOAD_ADDRESS               0x08004000
+# define APP_LOAD_ADDRESS               0x0800C000
 # define BOOTLOADER_DELAY               5000
 # define BOARD_ROBOMASTER_DEV_C
 # define INTERFACE_USB                  1
@@ -297,6 +300,8 @@
 # define _FLASH_KBYTES                  (*(uint16_t *)0x1fff7a22)
 # define BOARD_FLASH_SECTORS            ((_FLASH_KBYTES == 0x400) ? 11 : 23)
 # define BOARD_FLASH_SIZE               (_FLASH_KBYTES * 1024)
+# define BOARD_FIRST_FLASH_SECTOR_TO_ERASE 2
+# define APP_RESERVATION_SIZE           (2 * 16 * 1024)
 
 # define OSC_FREQ                       12
 

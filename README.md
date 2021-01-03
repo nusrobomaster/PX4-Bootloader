@@ -37,3 +37,8 @@ To avoid accidental erasure or bad image loading:
 
 The booaloder need to receive `PROTO_GET_SYNC` and `PROTO_GET_DEVICE` Prior to receiving `PROTO_CHIP_ERASE`    
 The booaloder need to receive `PROTO_GET_SYNC` and `PROTO_GET_DEVICE` and `PROTO_PROG_MULTI` and `PROTO_GET_CRC` Prior to receiving `PROTO_BOOT`
+
+
+## Flashing Command
+
+`dfu-util -a 0 --dfuse-address 0x08000000 -D ./build/robomaster_dev_a_bl/robomaster_dev_a_bl.bin`
